@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by José Ruiz on 3/8/21.
+//  Created by José Ruiz on 3/9/21.
 //
 
 import SwiftUI
@@ -19,4 +19,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
