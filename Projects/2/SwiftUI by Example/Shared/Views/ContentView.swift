@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
-    
+    let data = Bundle.main.decode([MenuSection].self, from: "menu.json")
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(menu) { section in
+                ForEach(data) { section in
                     Section(header: Text(section.name)) {
                         ForEach(section.items) { item in
                             NavigationLink(destination: ItemDetailView(item: item)) {
@@ -23,7 +23,6 @@ struct ContentView: View {
                     }
                 }
             }
-            .listStyle(GroupedListStyle())
             .navigationTitle("Menu")
         }
     }
