@@ -27,6 +27,12 @@
 		0EA55F9E25F97D6A00F7ADC1 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55F9C25F97D6A00F7ADC1 /* ItemView.swift */; };
 		0EA55FA225F97DCC00F7ADC1 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FA125F97DCC00F7ADC1 /* ItemDetailView.swift */; };
 		0EA55FA325F97DCC00F7ADC1 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FA125F97DCC00F7ADC1 /* ItemDetailView.swift */; };
+		0EA55FAD25F9A33100F7ADC1 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FAC25F9A33100F7ADC1 /* OrderView.swift */; };
+		0EA55FAE25F9A33100F7ADC1 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FAC25F9A33100F7ADC1 /* OrderView.swift */; };
+		0EA55FB225F9A5AC00F7ADC1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FB125F9A5AC00F7ADC1 /* MainView.swift */; };
+		0EA55FB325F9A5AC00F7ADC1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FB125F9A5AC00F7ADC1 /* MainView.swift */; };
+		0EA55FBB25F9A9D200F7ADC1 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FBA25F9A9D200F7ADC1 /* CheckoutView.swift */; };
+		0EA55FBC25F9A9D200F7ADC1 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA55FBA25F9A9D200F7ADC1 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,9 @@
 		0E9F582F25F8191B00DB7621 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
 		0EA55F9C25F97D6A00F7ADC1 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		0EA55FA125F97DCC00F7ADC1 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		0EA55FAC25F9A33100F7ADC1 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		0EA55FB125F9A5AC00F7ADC1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0EA55FBA25F9A9D200F7ADC1 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +144,12 @@
 		0E9F582525F8187E00DB7621 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0EA55FB125F9A5AC00F7ADC1 /* MainView.swift */,
 				0E9F579025F7FF5900DB7621 /* ContentView.swift */,
 				0EA55F9C25F97D6A00F7ADC1 /* ItemView.swift */,
 				0EA55FA125F97DCC00F7ADC1 /* ItemDetailView.swift */,
+				0EA55FAC25F9A33100F7ADC1 /* OrderView.swift */,
+				0EA55FBA25F9A9D200F7ADC1 /* CheckoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,11 +270,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E9F57DD25F80A1200DB7621 /* Order.swift in Sources */,
+				0EA55FBB25F9A9D200F7ADC1 /* CheckoutView.swift in Sources */,
 				0E9F57D825F8092400DB7621 /* MenuSection.swift in Sources */,
 				0E9F583025F8191B00DB7621 /* JSONDecoderExtension.swift in Sources */,
+				0EA55FB225F9A5AC00F7ADC1 /* MainView.swift in Sources */,
 				0E9F57A425F7FF5A00DB7621 /* ContentView.swift in Sources */,
 				0EA55FA225F97DCC00F7ADC1 /* ItemDetailView.swift in Sources */,
 				0EA55F9D25F97D6A00F7ADC1 /* ItemView.swift in Sources */,
+				0EA55FAD25F9A33100F7ADC1 /* OrderView.swift in Sources */,
 				0E9F57D225F8072C00DB7621 /* MenuItem.swift in Sources */,
 				0E9F57A225F7FF5A00DB7621 /* SwiftUI_by_ExampleApp.swift in Sources */,
 			);
@@ -273,11 +288,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E9F57DE25F80A1200DB7621 /* Order.swift in Sources */,
+				0EA55FBC25F9A9D200F7ADC1 /* CheckoutView.swift in Sources */,
 				0E9F57D925F8092400DB7621 /* MenuSection.swift in Sources */,
 				0E9F583125F8191B00DB7621 /* JSONDecoderExtension.swift in Sources */,
+				0EA55FB325F9A5AC00F7ADC1 /* MainView.swift in Sources */,
 				0E9F57A525F7FF5A00DB7621 /* ContentView.swift in Sources */,
 				0EA55FA325F97DCC00F7ADC1 /* ItemDetailView.swift in Sources */,
 				0EA55F9E25F97D6A00F7ADC1 /* ItemView.swift in Sources */,
+				0EA55FAE25F9A33100F7ADC1 /* OrderView.swift in Sources */,
 				0E9F57D325F8072C00DB7621 /* MenuItem.swift in Sources */,
 				0E9F57A325F7FF5A00DB7621 /* SwiftUI_by_ExampleApp.swift in Sources */,
 			);
