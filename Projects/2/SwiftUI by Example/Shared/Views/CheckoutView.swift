@@ -10,21 +10,57 @@ import SwiftUI
 struct CheckoutView: View {
     @EnvironmentObject var order: Order
     
-    let payments:[String] = ["Cash", "Credit Card", "iDine Points"]
     @State private var payment: String = "Cash"
     
+    @State private var addLoyaltyDetails: Bool = false
+    @State private var loyaltyNumber = ""
+    
+    @State private var tip: Int = 5
+    
+    let payments: [String] = ["Cash", "Credit Card", "iDine Points"]
+    let tips: [Int] = [0, 2, 3, 5, 7, 11 ,13]
+    
+    
+    var totalAmount: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        let total = Double(order.total)
+        let tipValue = total * Double(tip) / 100
+
+        return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
+    }
+    
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Section {
-                    Picker("How do you want to pay?", selection: $payment) {
-                        ForEach(payments, id: \.self) { p in
-                            Text(p)
-                        }
+        Form {
+            Section {
+                Picker("How do you want to pay?", selection: $payment.animation()) {
+                    ForEach(payments, id: \.self) {
+                        Text($0)
                     }
+                }
+                Toggle("Add iDine loyalty card", isOn: $addLoyaltyDetails.animation())
+                if addLoyaltyDetails {
+                    TextField("Enter your iDine ID", text: $loyaltyNumber)
+                }
+            }
+            
+            Section(header: Text("do you want to leave a tip?")) {
+                Picker("Percentage: ", selection: $tip) {
+                    ForEach(tips, id: \.self) {
+                        Text("\($0)%")
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section(header: Text("Total: \(totalAmount)")) {
+                Button("Confirm order") {
+                    
                 }
             }
         }
+        .navigationTitle("Checkout").navigationBarTitleDisplayMode(.inline)
     }
 }
 
