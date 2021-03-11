@@ -18,19 +18,7 @@ struct CheckoutView: View {
     
     let payments: [String] = ["Cash", "Credit Card", "iDine Points"]
     let tips: [Int] = [0, 2, 3, 5, 7, 11 ,13]
-    
-    
-    var totalAmount: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
         
-        let total = Double(order.total)
-        let tipValue = total * Double(tip) / 100
-
-        return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
-    }
-    
-    
     var body: some View {
         Form {
             Section {
@@ -53,7 +41,7 @@ struct CheckoutView: View {
                 }.pickerStyle(SegmentedPickerStyle())
             }
             
-            Section(header: Text("Total: \(totalAmount)")) {
+            Section(header: Text("Total: \(String.paymentAmount(total: Double(order.total), tip: tip))").foregroundColor(Color.black).bold().font(.headline)) {
                 Button("Confirm order") {
                     showConfirmationAlert.toggle()
                 }
@@ -61,7 +49,7 @@ struct CheckoutView: View {
         }
         .navigationTitle("Checkout").navigationBarTitleDisplayMode(.inline)
         .alert(isPresented: $showConfirmationAlert) {
-            Alert(title: Text("Order confirmed"), message: Text("Your total was: \(totalAmount)"), dismissButton: .default(Text("Done")))
+            Alert(title: Text("Order confirmed"), message: Text("Your total was: \(String.paymentAmount(total: Double(order.total), tip: tip))"), dismissButton: .default(Text("Done")))
         }
     }
 }

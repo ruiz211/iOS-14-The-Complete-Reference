@@ -25,7 +25,7 @@ struct OrderView: View {
                             Spacer()
                             Text("\(item.price)")
                         }
-                    }
+                    }.onDelete(perform: deleteItems)
                 }
                 Section {
                     HStack {
@@ -35,11 +35,19 @@ struct OrderView: View {
                             Text("$\(order.total)")
                         }
                     }
-                }
+                }.disabled(order.items.isEmpty)
             }
             .listStyle(InsetGroupedListStyle())
+            .toolbar(content: {
+                EditButton()
+            })
+            
             .navigationTitle(title)
         }
+    }
+    
+    func deleteItems(at offsets: IndexSet) -> Void {
+        order.items.remove(atOffsets: offsets)
     }
 }
 struct OrderView_Previews: PreviewProvider {

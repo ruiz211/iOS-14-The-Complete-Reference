@@ -33,6 +33,10 @@
 		0EF3EB1125FAA912003CEA32 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB0F25FAA912003CEA32 /* MainView.swift */; };
 		0EF3EB1725FAAC1D003CEA32 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB1625FAAC1D003CEA32 /* CheckoutView.swift */; };
 		0EF3EB1825FAAC1D003CEA32 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB1625FAAC1D003CEA32 /* CheckoutView.swift */; };
+		0EF3EB2825FAC5A5003CEA32 /* UsefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB2725FAC5A5003CEA32 /* UsefulFunctions.swift */; };
+		0EF3EB2925FAC5A5003CEA32 /* UsefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB2725FAC5A5003CEA32 /* UsefulFunctions.swift */; };
+		0EF3EB3525FAC9BC003CEA32 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB3425FAC9BC003CEA32 /* StringExtensions.swift */; };
+		0EF3EB3625FAC9BC003CEA32 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3EB3425FAC9BC003CEA32 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,8 @@
 		0E9F582F25F8191B00DB7621 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
 		0EF3EB0F25FAA912003CEA32 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0EF3EB1625FAAC1D003CEA32 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		0EF3EB2725FAC5A5003CEA32 /* UsefulFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulFunctions.swift; sourceTree = "<group>"; };
+		0EF3EB3425FAC9BC003CEA32 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 		0E9F582D25F818B600DB7621 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0EF3EB2625FAC589003CEA32 /* Protocols */,
 				0E9F582E25F818C100DB7621 /* Extensions */,
 			);
 			path = Utils;
@@ -166,8 +173,17 @@
 			isa = PBXGroup;
 			children = (
 				0E9F582F25F8191B00DB7621 /* JSONDecoderExtension.swift */,
+				0EF3EB3425FAC9BC003CEA32 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0EF3EB2625FAC589003CEA32 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0EF3EB2725FAC5A5003CEA32 /* UsefulFunctions.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF3EB2825FAC5A5003CEA32 /* UsefulFunctions.swift in Sources */,
 				0E9F57DD25F80A1200DB7621 /* Order.swift in Sources */,
 				0EF3EB1725FAAC1D003CEA32 /* CheckoutView.swift in Sources */,
 				0E9F57D825F8092400DB7621 /* MenuSection.swift in Sources */,
@@ -279,6 +296,7 @@
 				0E95163225FAA19C009EB0B1 /* ItemView.swift in Sources */,
 				0E95163C25FAA781009EB0B1 /* OrderView.swift in Sources */,
 				0E9F57D225F8072C00DB7621 /* MenuItem.swift in Sources */,
+				0EF3EB3525FAC9BC003CEA32 /* StringExtensions.swift in Sources */,
 				0E9F57A225F7FF5A00DB7621 /* SwiftUI_by_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF3EB2925FAC5A5003CEA32 /* UsefulFunctions.swift in Sources */,
 				0E9F57DE25F80A1200DB7621 /* Order.swift in Sources */,
 				0EF3EB1825FAAC1D003CEA32 /* CheckoutView.swift in Sources */,
 				0E9F57D925F8092400DB7621 /* MenuSection.swift in Sources */,
@@ -297,6 +316,7 @@
 				0E95163325FAA19C009EB0B1 /* ItemView.swift in Sources */,
 				0E95163D25FAA781009EB0B1 /* OrderView.swift in Sources */,
 				0E9F57D325F8072C00DB7621 /* MenuItem.swift in Sources */,
+				0EF3EB3625FAC9BC003CEA32 /* StringExtensions.swift in Sources */,
 				0E9F57A325F7FF5A00DB7621 /* SwiftUI_by_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
