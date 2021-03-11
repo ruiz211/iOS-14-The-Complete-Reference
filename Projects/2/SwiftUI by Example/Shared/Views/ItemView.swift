@@ -2,7 +2,7 @@
 //  ItemView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/10/21.
+//  Created by José Ruiz on 3/11/21.
 //
 
 import SwiftUI
@@ -12,20 +12,20 @@ struct ItemView: View {
     let colors: [String: Color] = ["D": .red, "G": .gray, "N": .yellow, "S": .black, "V": .purple]
     
     var body: some View {
-        HStack {
+        HStack{
             Image(item.thumbnailImage).clipShape(Circle())
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading){
                 Text(item.name).font(.headline)
-                Text("\(item.price)").font(.subheadline)
+                Text("$\(item.price)").font(.subheadline)
             }
             Spacer()
-//            HStack {
+            HStack {
                 ForEach(item.restrictions, id: \.self) { restriction in
-                    Text(restriction) .font(.caption).padding(5).background(colors[restriction, default: .black]).clipShape(Circle()).foregroundColor(.white)
+                    Text(restriction).padding(7).background(colors[restriction]).clipShape(Circle())
                 }
             }
         }
-//    }
+    }
 }
 
 struct ItemView_Previews: PreviewProvider {

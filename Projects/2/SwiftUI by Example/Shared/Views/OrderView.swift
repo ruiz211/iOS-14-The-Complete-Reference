@@ -2,13 +2,18 @@
 //  OrderView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/10/21.
+//  Created by José Ruiz on 3/11/21.
 //
 
 import SwiftUI
 
 struct OrderView: View {
     @EnvironmentObject var order: Order
+    
+    var title: String {
+        return order.items.count > 1 ? "Orders" : "Order"
+    }
+    
     
     var body: some View {
         NavigationView {
@@ -19,13 +24,12 @@ struct OrderView: View {
                             Text(item.name)
                             Spacer()
                             Text("\(item.price)")
-                            
                         }
                     }
                 }
                 Section {
-                    NavigationLink(destination: Text("Checkout")) {
-                        HStack {
+                    HStack {
+                        NavigationLink(destination: CheckoutView()) {
                             Text("Place order")
                             Spacer()
                             Text("$\(order.total)")
@@ -34,13 +38,10 @@ struct OrderView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            
-            .navigationTitle("Order")
+            .navigationTitle(title)
         }
     }
-    
 }
-
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView().environmentObject(Order())

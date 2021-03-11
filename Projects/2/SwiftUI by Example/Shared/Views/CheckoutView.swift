@@ -2,7 +2,7 @@
 //  CheckoutView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/10/21.
+//  Created by José Ruiz on 3/11/21.
 //
 
 import SwiftUI
@@ -10,22 +10,20 @@ import SwiftUI
 struct CheckoutView: View {
     @EnvironmentObject var order: Order
     
-    @State private var paymentType: String = "Cash"
-    
-    let paymentTypes: [String] = ["Cash", "Credit Card", "iDine Point"]
+    let payments:[String] = ["Cash", "Credit Card", "iDine Points"]
+    @State private var payment: String = "Cash"
     
     var body: some View {
         NavigationView {
             VStack {
                 Section {
-                    Picker("How do you want to pay?", selection: $paymentType) {
-                        ForEach(paymentTypes, id: \.self) { pt in
-                            Text(pt)
+                    Picker("How do you want to pay?", selection: $payment) {
+                        ForEach(payments, id: \.self) { p in
+                            Text(p)
                         }
                     }
                 }
             }
-            .navigationTitle("Checkout").navigationBarTitleDisplayMode(.inline)
         }
     }
 }

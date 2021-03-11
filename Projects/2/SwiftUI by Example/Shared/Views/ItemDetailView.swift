@@ -2,7 +2,7 @@
 //  ItemDetailView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/10/21.
+//  Created by José Ruiz on 3/11/21.
 //
 
 import SwiftUI
@@ -11,21 +11,25 @@ struct ItemDetailView: View {
     @EnvironmentObject var order: Order
     
     let item: MenuItem
+    
     var body: some View {
+        //        NavigationView {
         VStack {
-            ZStack(alignment: .bottomTrailing){
-                Image(item.mainImage).resizable().scaledToFit()
-                Text(item.photoCredit).padding(5).background(Color.black).font(.caption).foregroundColor(.white).offset(x: -7, y: -7)
+            ZStack(alignment: .bottomTrailing) {
+                Image(item.mainImage).resizable().scaledToFit().padding(7)
+                Text(item.photoCredit).padding(5).background(Color.black).font(.caption).foregroundColor(.white).offset(x: -11, y: -11)
             }
-            Text(item.description).navigationTitle(item.name).padding()
-                
-            Button("Order here") {
+            Text(item.description).padding()
+            Button("Order this product") {
                 order.add(item: item)
-            }.font(.headline).padding()
+            }.padding()
+            
             Spacer()
         }
+        .navigationTitle(Text(item.name))
         .navigationBarTitleDisplayMode(.inline)
     }
+    //    }
 }
 
 struct ItemDetailView_Previews: PreviewProvider {
