@@ -2,7 +2,7 @@
 //  MainView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/11/21.
+//  Created by José Ruiz on 3/17/21.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct MainView: View {
     var body: some View {
         TabView {
             ContentView().tabItem { Label("Menu", systemImage: "list.dash") }
-            OrderView().tabItem { Label("Order", systemImage: "square.and.pencil") }
+            OrderView().tabItem { Label("Bag", systemImage: "bag") }
         }
     }
 }

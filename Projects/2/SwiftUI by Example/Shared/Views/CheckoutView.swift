@@ -2,7 +2,7 @@
 //  CheckoutView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/11/21.
+//  Created by José Ruiz on 3/17/21.
 //
 
 import SwiftUI
@@ -11,45 +11,45 @@ struct CheckoutView: View {
     @EnvironmentObject var order: Order
     
     @State private var payment: String = "Cash"
-    @State private var addLoyaltyDetails: Bool = false
-    @State private var loyaltyNumber = ""
-    @State private var tip: Int = 5
-    @State private var showConfirmationAlert = false
+    @State private var amount: String = "0"
+    @State private var tip: Int = 2
     
-    let payments: [String] = ["Cash", "Credit Card", "iDine Points"]
-    let tips: [Int] = [0, 2, 3, 5, 7, 11 ,13]
-        
+    let payments: [String] = ["Cash", "Credit Card"]
+    let tips: [Int] = [0, 2, 3, 5, 7, 11, 13, 17]
+    
     var body: some View {
         Form {
-            Section {
-                Picker("How do you want to pay?", selection: $payment.animation()) {
+            Section(header: Text("Payment Method")) {
+                Picker("Select a payment method", selection: $payment) {
                     ForEach(payments, id: \.self) {
                         Text($0)
                     }
-                }
-                Toggle("Add iDine loyalty card", isOn: $addLoyaltyDetails.animation())
-                if addLoyaltyDetails {
-                    TextField("Enter your iDine ID", text: $loyaltyNumber)
-                }
-            }
-            
-            Section(header: Text("do you want to leave a tip?")) {
-                Picker("Percentage: ", selection: $tip) {
-                    ForEach(tips, id: \.self) {
-                        Text("\($0)%")
-                    }
+                    
                 }.pickerStyle(SegmentedPickerStyle())
-            }
-            
-            Section(header: Text("Total: \(String.paymentAmount(total: Double(order.total), tip: tip))").foregroundColor(Color.black).bold().font(.headline)) {
-                Button("Confirm order") {
-                    showConfirmationAlert.toggle()
+                
+                if payment == "Cash" {
+                    TextField("Amount", text: $amount)
+                } else {
+                    Text("Card...")
+                    Button("Add") {
+                        //
+                    }
                 }
             }
-        }
-        .navigationTitle("Checkout").navigationBarTitleDisplayMode(.inline)
-        .alert(isPresented: $showConfirmationAlert) {
-            Alert(title: Text("Order confirmed"), message: Text("Your total was: \(String.paymentAmount(total: Double(order.total), tip: tip))"), dismissButton: .default(Text("Done")))
+            Section(header: Text("Tip")) {
+                Picker("Tip", selection: $tip) {
+                    ForEach(tips, id: \.self) {
+                        Text("\($0)")
+                    }
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+            
+            Section(header: Text("Amount: \(String.paymentAmount(total: Double(order.total), tip: tip))")) {
+                Text((String.paymentAmount(total: Double(order.total), tip: tip)))
+            }
+            
+            .navigationTitle("Checkout")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

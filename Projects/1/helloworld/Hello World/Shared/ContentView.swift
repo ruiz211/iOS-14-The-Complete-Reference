@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Menu("Actions") {
+            Button("Duplicate") {}
+            Button("Rename") {}
+            Button("Delete…") {}
+            Menu("Copy") {
+                Button("Copy") {}
+                Button("Copy Formatted") {}
+                Button("Copy Library Path") {}
+            }
+        }
     }
 }
 

@@ -2,18 +2,13 @@
 //  OrderView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/11/21.
+//  Created by José Ruiz on 3/17/21.
 //
 
 import SwiftUI
 
 struct OrderView: View {
     @EnvironmentObject var order: Order
-    
-    var title: String {
-        return order.items.count > 1 ? "Orders" : "Order"
-    }
-    
     
     var body: some View {
         NavigationView {
@@ -23,26 +18,18 @@ struct OrderView: View {
                         HStack {
                             Text(item.name)
                             Spacer()
-                            Text("\(item.price)")
+                            Text("$\(item.price)")
                         }
                     }.onDelete(perform: deleteItems)
                 }
-                Section {
-                    HStack {
-                        NavigationLink(destination: CheckoutView()) {
-                            Text("Place order")
-                            Spacer()
-                            Text("$\(order.total)")
-                        }
+                Section(header: Text("$\(order.total)")) {
+                    NavigationLink(destination: CheckoutView()) {
+                        Text("Place order")
                     }
                 }.disabled(order.items.isEmpty)
             }
             .listStyle(InsetGroupedListStyle())
-            .toolbar(content: {
-                EditButton()
-            })
-            
-            .navigationTitle(title)
+            .navigationTitle("Bag")
         }
     }
     
@@ -50,6 +37,7 @@ struct OrderView: View {
         order.items.remove(atOffsets: offsets)
     }
 }
+
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView().environmentObject(Order())

@@ -16,7 +16,7 @@ struct ContentView: View {
                 ForEach(sections) { section in
                     Section(header: Text(section.name)) {
                         ForEach(section.items) { item in
-                            NavigationLink(destination: ItemDetailView(item: item)){
+                            NavigationLink(destination: ItemDetailView(item: item)) {
                                 ItemView(item: item)
                             }
                         }
@@ -24,7 +24,7 @@ struct ContentView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Menu")
+            .navigationTitle("iDine")
         }
     }
 }

@@ -2,21 +2,24 @@
 //  ItemView.swift
 //  SwiftUI by Example
 //
-//  Created by José Ruiz on 3/11/21.
+//  Created by José Ruiz on 3/17/21.
 //
 
 import SwiftUI
 
 struct ItemView: View {
     let item: MenuItem
+    
     let colors: [String: Color] = ["D": .red, "G": .gray, "N": .yellow, "S": .black, "V": .purple]
     
     var body: some View {
-        HStack{
-            Image(item.thumbnailImage).clipShape(Circle())
-            VStack(alignment: .leading){
-                Text(item.name).font(.headline)
-                Text("$\(item.price)").font(.subheadline)
+        HStack {
+            HStack {
+                Image(item.thumbnailImage).clipShape(Circle())
+                VStack(alignment: .leading) {
+                    Text(item.name).font(.headline)
+                    Text("$\(item.price)").font(.subheadline)
+                }
             }
             Spacer()
             HStack {
