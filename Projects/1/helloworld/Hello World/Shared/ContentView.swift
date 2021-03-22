@@ -16,10 +16,20 @@ struct ContentView: View {
                 selection == 0 ? Image(systemName: "house.fill") : Image(systemName: "house")
                 Text("Home")
             }.tag(0)
-            BagView().tabItem {
-                selection == 1 ? Image(systemName: "bag.circle.fill") : Image(systemName: "bag")
-                Text("Bag")
+            SearchView().tabItem{
+                selection == 1 ? Image(systemName: "doc.text.magnifyingglass") : Image(systemName: "magnifyingglass")
+                Text("Home")
             }.tag(1)
+            BagView().tabItem {
+                selection == 2 ? Image(systemName: "bag.fill") : Image(systemName: "bag")
+                Text("Bag")
+            }.tag(2)
+//            .onLongPressGesture {
+//                Menu("Editing") {
+//                    Button("Set In Point") {  }
+//                    Button("Set Out Point") {  }
+//                }
+//            }
         }
     }
 }
