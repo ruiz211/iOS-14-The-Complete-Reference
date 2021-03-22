@@ -13,6 +13,10 @@
 		0E1C7F5F25F6D4E3001DD6F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C7F4A25F6D4E2001DD6F9 /* ContentView.swift */; };
 		0E1C7F6025F6D4E3001DD6F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C7F4B25F6D4E3001DD6F9 /* Assets.xcassets */; };
 		0E1C7F6125F6D4E3001DD6F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C7F4B25F6D4E3001DD6F9 /* Assets.xcassets */; };
+		0E6A71822609547000185DE3 /* BagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A71812609547000185DE3 /* BagView.swift */; };
+		0E6A71832609547000185DE3 /* BagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A71812609547000185DE3 /* BagView.swift */; };
+		0E6A71892609547A00185DE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A71882609547A00185DE3 /* HomeView.swift */; };
+		0E6A718A2609547A00185DE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A71882609547A00185DE3 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,8 @@
 		0E1C7F5825F6D4E3001DD6F9 /* Hello World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1C7F5A25F6D4E3001DD6F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1C7F5B25F6D4E3001DD6F9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		0E6A71812609547000185DE3 /* BagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagView.swift; sourceTree = "<group>"; };
+		0E6A71882609547A00185DE3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,8 @@
 			children = (
 				0E1C7F4925F6D4E2001DD6F9 /* Hello_WorldApp.swift */,
 				0E1C7F4A25F6D4E2001DD6F9 /* ContentView.swift */,
+				0E6A71882609547A00185DE3 /* HomeView.swift */,
+				0E6A71812609547000185DE3 /* BagView.swift */,
 				0E1C7F4B25F6D4E3001DD6F9 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -187,6 +195,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6A71822609547000185DE3 /* BagView.swift in Sources */,
+				0E6A71892609547A00185DE3 /* HomeView.swift in Sources */,
 				0E1C7F5E25F6D4E3001DD6F9 /* ContentView.swift in Sources */,
 				0E1C7F5C25F6D4E3001DD6F9 /* Hello_WorldApp.swift in Sources */,
 			);
@@ -196,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6A71832609547000185DE3 /* BagView.swift in Sources */,
+				0E6A718A2609547A00185DE3 /* HomeView.swift in Sources */,
 				0E1C7F5F25F6D4E3001DD6F9 /* ContentView.swift in Sources */,
 				0E1C7F5D25F6D4E3001DD6F9 /* Hello_WorldApp.swift in Sources */,
 			);

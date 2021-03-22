@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection = 0
+    
     var body: some View {
-        Menu("Actions") {
-            Button("Duplicate") {}
-            Button("Rename") {}
-            Button("Delete…") {}
-            Menu("Copy") {
-                Button("Copy") {}
-                Button("Copy Formatted") {}
-                Button("Copy Library Path") {}
-            }
+        TabView(selection: $selection) {
+            HomeView().tabItem{
+                selection == 0 ? Image(systemName: "house.fill") : Image(systemName: "house")
+                Text("Home")
+            }.tag(0)
+            BagView().tabItem {
+                selection == 1 ? Image(systemName: "bag.circle.fill") : Image(systemName: "bag")
+                Text("Bag")
+            }.tag(1)
         }
     }
 }
@@ -27,4 +29,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
